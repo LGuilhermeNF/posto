@@ -41,7 +41,7 @@ object MovimentoRelForm: TMovimentoRelForm
       Font.Name = 'Arial'
       Font.Style = []
       ParentFont = False
-      object RLLabel1: TRLLabel
+      object lblCodVenda: TRLLabel
         Left = 4
         Top = 42
         Width = 66
@@ -54,22 +54,9 @@ object MovimentoRelForm: TMovimentoRelForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object RLLabel2: TRLLabel
-        Left = 69
-        Top = 42
-        Width = 26
-        Height = 14
-        Caption = 'Data'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Arial'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object RLLabel3: TRLLabel
-        Left = 320
-        Top = 42
+      object lblTanque: TRLLabel
+        Left = 337
+        Top = 39
         Width = 44
         Height = 14
         Caption = 'Tanque'
@@ -80,9 +67,9 @@ object MovimentoRelForm: TMovimentoRelForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object RLLabel4: TRLLabel
-        Left = 365
-        Top = 42
+      object lblBomba: TRLLabel
+        Left = 412
+        Top = 39
         Width = 41
         Height = 14
         Caption = 'Bomba'
@@ -93,9 +80,9 @@ object MovimentoRelForm: TMovimentoRelForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object RLLabel5: TRLLabel
-        Left = 407
-        Top = 42
+      object lblCombustivel: TRLLabel
+        Left = 495
+        Top = 39
         Width = 73
         Height = 14
         Caption = 'Combust'#237'vel'
@@ -106,9 +93,9 @@ object MovimentoRelForm: TMovimentoRelForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object RLLabel6: TRLLabel
-        Left = 596
-        Top = 42
+      object lblVolume: TRLLabel
+        Left = 636
+        Top = 39
         Width = 46
         Height = 14
         Alignment = taRightJustify
@@ -120,9 +107,9 @@ object MovimentoRelForm: TMovimentoRelForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object RLLabel7: TRLLabel
-        Left = 661
-        Top = 42
+      object lblPrcLitro: TRLLabel
+        Left = 709
+        Top = 39
         Width = 45
         Height = 14
         Alignment = taRightJustify
@@ -134,8 +121,8 @@ object MovimentoRelForm: TMovimentoRelForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object RLLabel8: TRLLabel
-        Left = 726
+      object lblImposto: TRLLabel
+        Left = 790
         Top = 42
         Width = 39
         Height = 14
@@ -148,8 +135,8 @@ object MovimentoRelForm: TMovimentoRelForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object RLLabel9: TRLLabel
-        Left = 979
+      object lblValorVenda: TRLLabel
+        Left = 988
         Top = 42
         Width = 54
         Height = 14
@@ -162,9 +149,9 @@ object MovimentoRelForm: TMovimentoRelForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object RLLabel10: TRLLabel
-        Left = 133
-        Top = 42
+      object lblFrentista: TRLLabel
+        Left = 173
+        Top = 39
         Width = 52
         Height = 14
         Caption = 'Frentista'
@@ -202,8 +189,8 @@ object MovimentoRelForm: TMovimentoRelForm
         ParentFont = False
         Text = ''
       end
-      object RLLabel13: TRLLabel
-        Left = 824
+      object lblValImposto: TRLLabel
+        Left = 864
         Top = 42
         Width = 65
         Height = 14
@@ -239,197 +226,29 @@ object MovimentoRelForm: TMovimentoRelForm
         ParentFont = False
         Text = ''
       end
-    end
-    object RLBand2: TRLBand
-      Left = 38
-      Top = 105
-      Width = 1047
-      Height = 33
-      object RLDBText2: TRLDBText
-        Left = 3
-        Top = 11
-        Width = 61
+      object lblDatVenda: TRLLabel
+        Left = 79
+        Top = 42
+        Width = 26
         Height = 14
-        Alignment = taRightJustify
-        DataField = 'COD_MOVIMENTO'
-        DataSource = dsQryAux
+        Caption = 'Data'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -11
         Font.Name = 'Arial'
-        Font.Style = []
+        Font.Style = [fsBold]
         ParentFont = False
-        Text = ''
-      end
-      object RLDBText3: TRLDBText
-        Left = 69
-        Top = 11
-        Width = 62
-        Height = 14
-        DataField = 'DAT_MOVIMENTO'
-        DataSource = dsQryAux
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Arial'
-        Font.Style = []
-        ParentFont = False
-        Text = ''
-      end
-      object RLDBText4: TRLDBText
-        Left = 133
-        Top = 11
-        Width = 184
-        Height = 14
-        DataField = 'DES_FRENTISTA'
-        DataSource = dsQryAux
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Arial'
-        Font.Style = []
-        ParentFont = False
-        Text = ''
-      end
-      object RLDBText5: TRLDBText
-        Left = 320
-        Top = 13
-        Width = 39
-        Height = 14
-        Alignment = taCenter
-        DataField = 'COD_TANQUE'
-        DataSource = dsQryAux
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Arial'
-        Font.Style = []
-        ParentFont = False
-        Text = ''
-      end
-      object RLDBText6: TRLDBText
-        Left = 365
-        Top = 13
-        Width = 36
-        Height = 14
-        Alignment = taCenter
-        DataField = 'Cod_Bomba'
-        DataSource = dsQryAux
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Arial'
-        Font.Style = []
-        ParentFont = False
-        Text = ''
-      end
-      object RLDBText7: TRLDBText
-        Left = 407
-        Top = 13
-        Width = 137
-        Height = 14
-        DataField = 'DES_COMBUSTIVEL'
-        DataSource = dsQryAux
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Arial'
-        Font.Style = []
-        ParentFont = False
-        Text = ''
-      end
-      object RLDBText8: TRLDBText
-        Left = 550
-        Top = 13
-        Width = 92
-        Height = 14
-        Alignment = taRightJustify
-        DataField = 'QTD_LITRO'
-        DataSource = dsQryAux
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Arial'
-        Font.Style = []
-        ParentFont = False
-        Text = ''
-      end
-      object RLDBText9: TRLDBText
-        Left = 648
-        Top = 13
-        Width = 58
-        Height = 14
-        Alignment = taRightJustify
-        DataField = 'PRC_LITRO'
-        DataSource = dsQryAux
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Arial'
-        Font.Style = []
-        ParentFont = False
-        Text = ''
-      end
-      object RLDBText10: TRLDBText
-        Left = 717
-        Top = 13
-        Width = 48
-        Height = 14
-        Alignment = taRightJustify
-        DataField = 'IMPOSTO'
-        DataSource = dsQryAux
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Arial'
-        Font.Style = []
-        ParentFont = False
-        Text = ''
-      end
-      object RLDBText11: TRLDBText
-        Left = 895
-        Top = 13
-        Width = 138
-        Height = 14
-        Alignment = taRightJustify
-        DataField = 'VAL_VENDA'
-        DataSource = dsQryAux
-        DisplayMask = '#,##0.00'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Arial'
-        Font.Style = []
-        ParentFont = False
-        Text = ''
-      end
-      object RLDBText1: TRLDBText
-        Left = 813
-        Top = 13
-        Width = 76
-        Height = 14
-        Alignment = taRightJustify
-        DataField = 'VAL_IMPOSTO'
-        DataSource = dsQryAux
-        DisplayMask = '#,##0.00'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Arial'
-        Font.Style = []
-        ParentFont = False
-        Text = ''
       end
     end
     object RLBand3: TRLBand
       Left = 38
-      Top = 138
+      Top = 205
       Width = 1047
-      Height = 31
+      Height = 52
       BandType = btSummary
       object RLLabel12: TRLLabel
-        Left = 2
-        Top = 12
+        Left = 3
+        Top = 33
         Width = 30
         Height = 14
         Caption = 'Total'
@@ -442,7 +261,7 @@ object MovimentoRelForm: TMovimentoRelForm
       end
       object RLDBResult1: TRLDBResult
         Left = 550
-        Top = 14
+        Top = 33
         Width = 92
         Height = 14
         Alignment = taRightJustify
@@ -459,7 +278,7 @@ object MovimentoRelForm: TMovimentoRelForm
       end
       object RLDBResult2: TRLDBResult
         Left = 771
-        Top = 14
+        Top = 33
         Width = 118
         Height = 14
         Alignment = taRightJustify
@@ -477,7 +296,7 @@ object MovimentoRelForm: TMovimentoRelForm
       end
       object RLDBResult3: TRLDBResult
         Left = 895
-        Top = 14
+        Top = 33
         Width = 138
         Height = 14
         Alignment = taRightJustify
@@ -495,13 +314,300 @@ object MovimentoRelForm: TMovimentoRelForm
       end
       object RLDraw1: TRLDraw
         Left = 0
-        Top = 0
+        Top = 23
         Width = 1047
         Height = 8
-        Align = faTop
         DrawKind = dkLine
         HoldStyle = hsHorizontally
         Pen.Style = psDot
+      end
+    end
+    object RLGroup1: TRLGroup
+      Left = 38
+      Top = 105
+      Width = 1047
+      Height = 100
+      AllowedBands = [btSummary]
+      DataFields = 'Dat_Movimento;Cod_Tanque;Cod_Bomba;Val_Venda'
+      object RLBand2: TRLBand
+        Left = 0
+        Top = 20
+        Width = 1047
+        Height = 33
+        object txtCodVenda: TRLDBText
+          Left = -22
+          Top = 3
+          Width = 92
+          Height = 14
+          Alignment = taRightJustify
+          DataField = 'COD_MOVIMENTO'
+          DataSource = dsQryAux
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Holder = lblCodVenda
+          ParentFont = False
+          Text = ''
+        end
+        object RLDBText4: TRLDBText
+          Left = 173
+          Top = 3
+          Width = 84
+          Height = 14
+          DataField = 'DES_FRENTISTA'
+          DataSource = dsQryAux
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Holder = lblFrentista
+          ParentFont = False
+          Text = ''
+        end
+        object RLDBText7: TRLDBText
+          Left = 495
+          Top = 3
+          Width = 101
+          Height = 14
+          DataField = 'DES_COMBUSTIVEL'
+          DataSource = dsQryAux
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Holder = lblCombustivel
+          ParentFont = False
+          Text = ''
+        end
+        object RLDBText8: TRLDBText
+          Left = 623
+          Top = 3
+          Width = 59
+          Height = 14
+          Alignment = taRightJustify
+          DataField = 'QTD_LITRO'
+          DataSource = dsQryAux
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Holder = lblVolume
+          ParentFont = False
+          Text = ''
+        end
+        object RLDBText9: TRLDBText
+          Left = 696
+          Top = 3
+          Width = 58
+          Height = 14
+          Alignment = taRightJustify
+          DataField = 'PRC_LITRO'
+          DataSource = dsQryAux
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Holder = lblPrcLitro
+          ParentFont = False
+          Text = ''
+        end
+        object RLDBText10: TRLDBText
+          Left = 781
+          Top = 3
+          Width = 48
+          Height = 14
+          Alignment = taRightJustify
+          DataField = 'IMPOSTO'
+          DataSource = dsQryAux
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Holder = lblImposto
+          ParentFont = False
+          Text = ''
+        end
+        object RLDBText1: TRLDBText
+          Left = 853
+          Top = 3
+          Width = 76
+          Height = 14
+          Alignment = taRightJustify
+          DataField = 'VAL_IMPOSTO'
+          DataSource = dsQryAux
+          DisplayMask = '#,##0.00'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Holder = lblValImposto
+          ParentFont = False
+          Text = ''
+        end
+        object RLDBText11: TRLDBText
+          Left = 975
+          Top = 3
+          Width = 67
+          Height = 14
+          Alignment = taRightJustify
+          DataField = 'VAL_VENDA'
+          DataSource = dsQryAux
+          DisplayMask = '#,##0.00'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Holder = lblValorVenda
+          ParentFont = False
+          Text = ''
+        end
+        object txtDatVenda: TRLDBText
+          Left = 79
+          Top = 3
+          Width = 91
+          Height = 14
+          DataField = 'DAT_MOVIMENTO'
+          DataSource = dsQryAux
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Holder = lblDatVenda
+          ParentFont = False
+          Text = ''
+        end
+        object RLDBText5: TRLDBText
+          Left = 322
+          Top = 3
+          Width = 74
+          Height = 14
+          Alignment = taCenter
+          DataField = 'COD_TANQUE'
+          DataSource = dsQryAux
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Holder = lblTanque
+          ParentFont = False
+          Text = ''
+        end
+        object RLDBText6: TRLDBText
+          Left = 402
+          Top = 3
+          Width = 62
+          Height = 14
+          Alignment = taCenter
+          DataField = 'Cod_Bomba'
+          DataSource = dsQryAux
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Holder = lblBomba
+          ParentFont = False
+          Text = ''
+        end
+      end
+      object RLBand4: TRLBand
+        Left = 0
+        Top = 0
+        Width = 1047
+        Height = 20
+        BandType = btColumnHeader
+      end
+      object RLBand5: TRLBand
+        Left = 0
+        Top = 53
+        Width = 1047
+        Height = 20
+        BandType = btFooter
+        Borders.Sides = sdCustom
+        Borders.DrawLeft = False
+        Borders.DrawTop = True
+        Borders.DrawRight = False
+        Borders.DrawBottom = False
+        object RLDBResult4: TRLDBResult
+          Left = 79
+          Top = 2
+          Width = 125
+          Height = 14
+          DataField = 'DAT_MOVIMENTO'
+          DataSource = dsQryAux
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Info = riCount
+          ParentFont = False
+          ResetAfterPrint = True
+          Text = 'Total por data: '
+        end
+        object RLDBResult5: TRLDBResult
+          Left = 252
+          Top = 2
+          Width = 140
+          Height = 14
+          DataField = 'COD_TANQUE'
+          DataSource = dsQryAux
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Info = riCount
+          ParentFont = False
+          ResetAfterPrint = True
+          Text = 'Total por tanque: '
+        end
+        object RLDBResult6: TRLDBResult
+          Left = 412
+          Top = 2
+          Width = 140
+          Height = 14
+          DataField = 'COD_BOMBA'
+          DataSource = dsQryAux
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Info = riCount
+          ParentFont = False
+          ResetAfterPrint = True
+          Text = 'Total por bomba: '
+        end
+        object RLDBResult7: TRLDBResult
+          Left = 906
+          Top = 2
+          Width = 175
+          Height = 14
+          DataField = 'VAL_VENDA'
+          DataSource = dsQryAux
+          DisplayMask = '#,##0.00'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Info = riSum
+          ParentFont = False
+          ResetAfterPrint = True
+          Text = 'Total Venda: '
+        end
       end
     end
   end

@@ -8,7 +8,7 @@ uses
   FireDAC.Phys.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Vcl.StdCtrls,
   Vcl.Buttons, Vcl.ExtCtrls, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  DmDados, uPrincipal, Vcl.ComCtrls;
+  DmDados, uPrincipal, Vcl.ComCtrls, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids;
 
 type
   TModeloCdForm = class(TForm)

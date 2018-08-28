@@ -27,7 +27,6 @@ object ModeloCdForm: TModeloCdForm
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 595
     DesignSize = (
       471
       41)
@@ -76,29 +75,28 @@ object ModeloCdForm: TModeloCdForm
       Caption = 'Sair'
       TabOrder = 4
       OnClick = btnSairClick
-      ExplicitLeft = 512
     end
   end
   object fdUpdCadastro: TFDUpdateSQL
     Connection = DadosDm.fdCon
-    Left = 224
-    Top = 72
+    Left = 368
+    Top = 232
   end
   object fdQryCadastro: TFDQuery
     Connection = DadosDm.fdCon
     Transaction = fdTransaction
     UpdateTransaction = fdTransaction
-    Left = 168
-    Top = 72
+    Left = 312
+    Top = 232
   end
   object fdTransaction: TFDTransaction
     Connection = DadosDm.fdCon
-    Left = 272
-    Top = 72
+    Left = 416
+    Top = 232
   end
   object dsCadastro: TDataSource
     DataSet = fdQryCadastro
-    Left = 112
-    Top = 72
+    Left = 256
+    Top = 232
   end
 end
