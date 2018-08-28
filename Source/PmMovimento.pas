@@ -4,7 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdCtrls, Buttons, DB, DBClient, Vcl.ComCtrls, RLPreview;
+  Dialogs, ExtCtrls, StdCtrls, Buttons, DB, DBClient, Vcl.ComCtrls, RLPreview,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TMovimentoPmForm = class(TForm)
@@ -14,27 +17,30 @@ type
     Panel1: TPanel;
     LabelTitulo: TLabel;
     GroupBox1: TGroupBox;
-    DateTimePicker1: TDateTimePicker;
-    DateTimePicker2: TDateTimePicker;
-    Label1: TLabel;
-    Label2: TLabel;
-    RadioGroup1: TRadioGroup;
+    edtInicial: TDateTimePicker;
+    edtFinal: TDateTimePicker;
+    lblInicial: TLabel;
+    lblFinal: TLabel;
+    rgpAgrupamento: TRadioGroup;
     procedure FechaBtnClick(Sender: TObject);
     procedure ChamaImpressao(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
-  protected
-    procedure Critica; virtual;
-    procedure Processa; virtual;
   private
     { Private declarations }
+    function GeraSql: String;
+    procedure Critica;
+    function  FormatSqlDate(PDat: TDateTime): String;
   public
     { Public declarations }
   end;
 
 var
   MovimentoPmForm: TMovimentoPmForm;
+  vSql,
+  vAgrupamento,
+  vInfoRelatorio: String;
 
 implementation
 
@@ -51,29 +57,41 @@ end;
 
 procedure TMovimentoPmForm.ChamaImpressao(Sender: TObject);
 begin
-{  Panel1.SetFocus;
   Critica;
+
+  MovimentoRelForm := TMovimentoRelForm.Create(Self);
+  GeraSql;
+  MovimentoRelForm.fdQryAux.SQL.Text := vSql;
+  MovimentoRelForm.FInfoRelatorio := LabelTitulo.Caption +
+                                     ' Período: '+ DateToStr(edtInicial.Date) + ' à ' + DateToStr(edtFinal.Date);
 
   if (Sender as TBitBtn).Name = 'ImprimeBtn' then
     begin
       if MessageBox(Handle,'Confirma Impressão ?','Confirmação',MB_ICONQUESTION+MB_YESNO) <> ID_YES then
         Exit;
-    end;
-
-  Processa;  }
-  MovimentoRelForm := TMovimentoRelForm.Create(Self);
-  MovimentoRelForm.RLReport1.Preview();
+      MovimentoRelForm.RLReport1.Print
+    end
+  else
+  if (Sender as TBitBtn).Name = 'VisualizaBtn' then
+    MovimentoRelForm.RLReport1.Preview();
   FreeAndNil(MovimentoRelForm);
 end;
 
 procedure TMovimentoPmForm.Critica;
 begin
-
+  if (edtInicial.Date > edtFinal.Date) then
+    raise Exception.Create('Data Inválida');
 end;
 
-procedure TMovimentoPmForm.Processa;
+function TMovimentoPmForm.FormatSqlDate(PDat: TDateTime): String;
 begin
-
+  if PDat > 2 then
+    if Frac(PDat) > 0 then
+      Result := ''''+FormatDateTime('yyyy-mm-dd hh:nn:ss',PDat)+''''
+    else
+      Result := ''''+FormatDateTime('yyyy-mm-dd 00:00:00',PDat)+''''
+  else
+    Result := 'null';
 end;
 
 procedure TMovimentoPmForm.FormCreate(Sender: TObject);
@@ -93,6 +111,47 @@ begin
     VK_NEXT:
       ChamaImpressao(VisualizaBtn);
   end;
+end;
+
+function TMovimentoPmForm.GeraSql: String;
+begin
+  vSql := 'select vd.*,                  '+
+          '        tq.Des_Tanque,        '+
+          '        bb.Des_Bomba,         '+
+          '        cb.Des_Combustivel,   '+
+          '        fr.Des_Frentista      '+
+          'from VENDA vd                 '+
+          'inner join TANQUE tq on tq.cod_tanque = vd.cod_tanque                 '+
+          'inner join BOMBA bb on bb.cod_bomba = vd.cod_bomba                    '+
+          'inner join COMBUSTIVEL cb on cb.cod_combustivel = vd.cod_combustivel  '+
+          'inner join FRENTISTA fr on fr.cod_frentista = vd.cod_frentista        '+
+          'where vd.dat_movimento between '+ FormatSqlDate(edtInicial.Date) + ' and ' + FormatSqlDate(edtFinal.Date);
+   Result := vSql;
+
+ { case rgpAgrupamento.ItemIndex of
+    0:
+      begin
+        vSql := vSql + ' group by vd.Dat_Movimento';
+        vAgrupamento := ' Agrupado por Data';
+      end;
+    1:
+      begin
+        vSql := vSql + ' group by vd.Cod_Tanque';
+        vAgrupamento := ' Agrupado por Tante';
+      end;
+    2:
+      begin
+        vSql := vSql + ' group by vd.Cod_Bomba';
+        vAgrupamento := ' Agrupado por Bomba';
+      end;
+    3:
+      begin
+        vSql := vSql + ' group by vd.Val_Venda';
+        vAgrupamento := ' Agrupado por Venda';
+      end;
+  end;  }
+
+
 end;
 
 end.

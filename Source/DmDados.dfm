@@ -1,16 +1,19 @@
-object s: Ts
+object DadosDm: TDadosDm
   OldCreateOrder = False
-  Height = 261
-  Width = 362
-  object FDConnection1: TFDConnection
+  OnCreate = DataModuleCreate
+  Height = 150
+  Width = 215
+  object fdCon: TFDConnection
     Params.Strings = (
-      'Database=D:\Projetos\Delphi\db\POSTO_DB.FDB'
       'User_Name=sysdba'
       'Password=masterkey'
       'Port=3050'
+      'CharacterSet=WIN1256'
+      'Database=C:\Projeto Delphi\Posto\DataBase\POSTOSISTEMA_DB.FDB'
       'DriverID=FB')
+    Connected = True
     LoginPrompt = False
-    Left = 33
-    Top = 17
+    Left = 88
+    Top = 48
   end
 end

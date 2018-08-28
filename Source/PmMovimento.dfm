@@ -3,7 +3,7 @@ object MovimentoPmForm: TMovimentoPmForm
   Top = 138
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsDialog
-  ClientHeight = 192
+  ClientHeight = 127
   ClientWidth = 406
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,7 +18,7 @@ object MovimentoPmForm: TMovimentoPmForm
   OnKeyDown = FormKeyDown
   DesignSize = (
     406
-    192)
+    127)
   PixelsPerInch = 96
   TextHeight = 13
   object LabelTitulo: TLabel
@@ -62,7 +62,7 @@ object MovimentoPmForm: TMovimentoPmForm
     OnClick = ChamaImpressao
   end
   object VisualizaBtn: TBitBtn
-    Left = 324
+    Left = 323
     Top = 61
     Width = 75
     Height = 25
@@ -186,35 +186,35 @@ object MovimentoPmForm: TMovimentoPmForm
     TabOrder = 0
     object GroupBox1: TGroupBox
       Left = 0
-      Top = 3
+      Top = 7
       Width = 297
       Height = 78
       Caption = 'Per'#237'odo de Abastecimento'
       TabOrder = 0
-      object Label1: TLabel
+      object lblInicial: TLabel
         Left = 16
         Top = 21
         Width = 27
         Height = 13
-        Caption = 'Inicial'
+        Caption = 'In'#237'cio'
       end
-      object Label2: TLabel
+      object lblFinal: TLabel
         Left = 160
         Top = 21
         Width = 22
         Height = 13
         Caption = 'Final'
       end
-      object DateTimePicker1: TDateTimePicker
+      object edtInicial: TDateTimePicker
         Left = 16
-        Top = 36
+        Top = 35
         Width = 113
         Height = 21
         Date = 43335.149162083330000000
         Time = 43335.149162083330000000
         TabOrder = 0
       end
-      object DateTimePicker2: TDateTimePicker
+      object edtFinal: TDateTimePicker
         Left = 160
         Top = 36
         Width = 113
@@ -224,19 +224,21 @@ object MovimentoPmForm: TMovimentoPmForm
         TabOrder = 1
       end
     end
-    object RadioGroup1: TRadioGroup
+    object rgpAgrupamento: TRadioGroup
       Left = 0
-      Top = 87
+      Top = 103
       Width = 297
       Height = 58
       Caption = 'Agrupar Relat'#243'rio Por:'
       Columns = 4
+      ItemIndex = 0
       Items.Strings = (
         'Data'
         'Tanque'
         'Bomba'
         'Valor')
       TabOrder = 1
+      Visible = False
     end
   end
 end

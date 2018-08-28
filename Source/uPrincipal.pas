@@ -9,7 +9,7 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
   Vcl.Menus, Vcl.ExtCtrls, Data.DB, FireDAC.Comp.Client, FireDAC.Phys.SQLite,
   FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs, FireDAC.Phys.FB,
-  FireDAC.Phys.FBDef;
+  FireDAC.Phys.FBDef, dxGDIPlusClasses;
 
 type
   TPrincipalForm = class(TForm)
@@ -25,6 +25,7 @@ type
     Abastecer1: TMenuItem;
     RelaodeAbastecimento1: TMenuItem;
     Combustvel1: TMenuItem;
+    Image1: TImage;
     procedure anque1Click(Sender: TObject);
     procedure Bomba1Click(Sender: TObject);
     procedure Abastecer1Click(Sender: TObject);
@@ -45,37 +46,37 @@ implementation
 
 {$R *.dfm}
 
-uses EdCombustivel, EdFrentista, EdTanque,
-  EdBomba, PrMovimento, RelMovimento, PmMovimento;
+uses RelMovimento, PmMovimento, CdTanque, CdBomba,
+     CdCombustivel, CdFrentista, PrVenda;
 
 procedure TPrincipalForm.Abastecer1Click(Sender: TObject);
 begin
-  MovimentoPrForm := TMovimentoPrForm.Create(Self);
-  MovimentoPrForm.ShowModal;
+  VendaPrForm := TVendaPrForm.Create(Self);
+  VendaPrForm.ShowModal;
 end;
 
 procedure TPrincipalForm.anque1Click(Sender: TObject);
 begin
-  TanqueEdForm := TTanqueEdForm.Create(Self);
-  TanqueEdForm.ShowModal;
+  TanqueCdForm := TTanqueCdForm.Create(Self);
+  TanqueCdForm.ShowModal;
 end;
 
 procedure TPrincipalForm.Bomba1Click(Sender: TObject);
 begin
-  BombaEdForm := TBombaEdForm.Create(Self);
-  BombaEdForm.ShowModal;
+  BombaCdForm := TBombaCdForm.Create(Self);
+  BombaCdForm.ShowModal;
 end;
 
 procedure TPrincipalForm.Combustvel1Click(Sender: TObject);
 begin
-  CombustivelEdForm := TCombustivelEdForm.Create(Self);
-  CombustivelEdForm.ShowModal;
+  CombustivelCdForm := TCombustivelCdForm.Create(Self);
+  CombustivelCdForm.ShowModal;
 end;
 
 procedure TPrincipalForm.Frentista1Click(Sender: TObject);
 begin
-  FrentistaEdForm := TFrentistaEdForm.Create(Self);
-  FrentistaEdForm.ShowModal;
+  FrentistaCdForm := TFrentistaCdForm.Create(Self);
+  FrentistaCdForm.ShowModal;
 end;
 
 procedure TPrincipalForm.RelaodeAbastecimento1Click(Sender: TObject);

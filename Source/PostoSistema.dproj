@@ -105,39 +105,6 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="DmDados.pas">
-            <Form>s</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="EdBomba.pas">
-            <Form>BombaEdForm</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="EdCombustivel.pas">
-            <Form>CombustivelEdForm</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="EdConfig.pas">
-            <Form>Form1</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="EdFrentista.pas">
-            <Form>FrentistaEdForm</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="EdModel.pas">
-            <Form>ModelEdForm</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="EdMovimento.pas">
-            <Form>MovimentoEdForm</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="EdTanque.pas">
-            <Form>TanqueEdForm</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="uPrincipal.pas">
             <Form>PrincipalForm</Form>
             <FormType>dfm</FormType>
@@ -152,6 +119,39 @@
         </DCCReference>
         <DCCReference Include="RelMovimento.pas">
             <Form>MovimentoRelForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="DmDados.pas">
+            <Form>DadosDm</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="EdConfig.pas">
+            <Form>ConfigEdForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CdModelo.pas">
+            <Form>ModeloCdForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CdTanque.pas">
+            <Form>TanqueCdForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CdBomba.pas">
+            <Form>BombaCdForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CdFrentista.pas">
+            <Form>FrentistaCdForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="PrVenda.pas">
+            <Form>VendaPrForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="CdCombustivel.pas">
+            <Form>CombustivelCdForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
